@@ -369,7 +369,7 @@ export default function Hero() {
       </div>
 
       {/* Demo video */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 mt-16 pb-12">
+      <div id="hero-video" className="relative z-10 w-full max-w-5xl mx-auto px-6 mt-16 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

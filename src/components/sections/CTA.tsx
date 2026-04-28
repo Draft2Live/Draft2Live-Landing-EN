@@ -93,7 +93,7 @@ export default function CTA() {
               <Button onClick={() => openEarlyAccess()} variant="primary" size="lg">
                 {t('ctaPrimary')}
               </Button>
-              <Button href="mailto:hello@draft2live.ai" variant="secondary" size="lg">
+              <Button href="#hero-video" variant="secondary" size="lg">
                 {t('ctaSecondary')}
               </Button>
             </motion.div>
