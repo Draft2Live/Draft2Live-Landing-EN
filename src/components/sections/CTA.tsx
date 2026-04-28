@@ -5,13 +5,11 @@ import { useRef, useState, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 import Button from '@/components/ui/Button';
-import { useEarlyAccess } from '@/lib/EarlyAccessContext';
 
 export default function CTA() {
   const t = useTranslations('cta');
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const { open: openEarlyAccess } = useEarlyAccess();
 
   // 3D magnetic tilt on hover
   const [tilt, setTilt] = useState({ rx: 0, ry: 0 });
@@ -90,7 +88,7 @@ export default function CTA() {
               variants={fadeInUp}
               className="mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4"
             >
-              <Button onClick={() => openEarlyAccess()} variant="primary" size="lg">
+              <Button href="https://draft2live.ai/en/register" rel="noopener" variant="primary" size="lg">
                 {t('ctaPrimary')}
               </Button>
               <Button href="#hero-video" variant="secondary" size="lg">

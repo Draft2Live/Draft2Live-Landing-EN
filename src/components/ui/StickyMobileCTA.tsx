@@ -3,12 +3,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { useEarlyAccess } from '@/lib/EarlyAccessContext';
 
 export default function StickyMobileCTA() {
   const t = useTranslations('stickyMobileCTA');
   const [visible, setVisible] = useState(false);
-  const { open: openEarlyAccess } = useEarlyAccess();
 
   useEffect(() => {
     const onScroll = () => {
@@ -29,12 +27,13 @@ export default function StickyMobileCTA() {
           className="fixed bottom-0 left-0 right-0 z-40 md:hidden"
         >
           <div className="bg-[#002365]/95 backdrop-blur-xl border-t border-white/10 px-4 py-3 safe-bottom">
-            <button
-              onClick={() => openEarlyAccess()}
-              className="w-full py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm rounded-xl transition-colors cursor-pointer shadow-lg shadow-teal-500/20"
+            <a
+              href="https://draft2live.ai/en/register"
+              rel="noopener"
+              className="w-full inline-flex items-center justify-center py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm rounded-xl transition-colors cursor-pointer shadow-lg shadow-teal-500/20"
             >
               {t('cta')}
-            </button>
+            </a>
           </div>
         </motion.div>
       )}

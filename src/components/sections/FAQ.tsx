@@ -5,7 +5,6 @@ import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 import SectionHeader from '@/components/ui/SectionHeader';
-import { useEarlyAccess } from '@/lib/EarlyAccessContext';
 
 interface FAQItem {
   q: string;
@@ -16,7 +15,6 @@ export default function FAQ() {
   const t = useTranslations('faq');
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const { open: openEarlyAccess } = useEarlyAccess();
   const faqItems = t.raw('items') as FAQItem[];
 
   return (
@@ -51,15 +49,16 @@ export default function FAQ() {
             <p className="text-text-secondary text-base mb-4">
               {t('microCta.text')}
             </p>
-            <motion.button
-              onClick={() => openEarlyAccess()}
+            <motion.a
+              href="https://draft2live.ai/en/register"
+              rel="noopener"
               whileHover={{ scale: 1.04, boxShadow: '0 0 20px rgba(4,184,183,0.3)' }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              className="px-6 py-3.5 text-sm font-bold rounded-xl bg-teal-600 text-white hover:bg-teal-500 transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold rounded-xl bg-teal-600 text-white hover:bg-teal-500 transition-colors cursor-pointer"
             >
               {t('microCta.button')}
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

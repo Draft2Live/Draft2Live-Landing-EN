@@ -4,7 +4,6 @@ import { motion, AnimatePresence, useMotionValueEvent, useScroll, useSpring } fr
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { useEarlyAccess } from '@/lib/EarlyAccessContext';
 
 const navLinkHrefs = [
   { key: 'features', href: '#features' },
@@ -18,7 +17,6 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const { open: openEarlyAccess } = useEarlyAccess();
   const navLinks = navLinkHrefs.map((l) => ({ ...l, label: t(`links.${l.key}`) }));
   const { scrollYProgress, scrollY } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
@@ -102,13 +100,13 @@ export default function Navigation() {
 
         {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-4">
-          <motion.button onClick={() => openEarlyAccess()}
+          <motion.a href="https://draft2live.ai/en/register" rel="noopener"
             whileHover={{ scale: 1.04, boxShadow: '0 0 20px rgba(4,184,183,0.3)' }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             className="px-5 py-2.5 text-sm font-bold rounded-xl bg-teal-600 text-white shadow-lg shadow-teal-500/20 hover:bg-teal-500 transition-colors cursor-pointer">
             {t('cta')}
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Mobile burger */}
@@ -136,13 +134,14 @@ export default function Navigation() {
                   {link.label}
                 </motion.a>
               ))}
-              <motion.button
+              <motion.a
+                href="https://draft2live.ai/en/register" rel="noopener"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                onClick={() => { setMobileOpen(false); openEarlyAccess(); }}
+                onClick={() => setMobileOpen(false)}
                 className="mt-4 px-8 py-4 text-lg font-bold rounded-xl bg-teal-600 text-white hover:bg-teal-500 transition-colors cursor-pointer">
                 {t('cta')}
-              </motion.button>
+              </motion.a>
             </motion.div>
           )}
         </AnimatePresence>
