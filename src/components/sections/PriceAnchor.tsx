@@ -10,7 +10,7 @@ const competitorMeta = [
   { name: 'SurferSEO', price: 89 },
   { name: 'Jasper', price: 59 },
   { name: 'DeepL Pro', price: 25 },
-  { name: 'WP-плагіни (Yoast, RankMath)', price: 26 },
+  { name: 'WP plugins (Yoast, RankMath)', price: 26 },
 ];
 
 export default function PriceAnchor() {

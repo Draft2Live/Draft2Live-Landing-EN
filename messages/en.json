@@ -430,10 +430,6 @@
       "title": "Company",
       "links": ["Contact"]
     },
-    "languages": {
-      "title": "Languages",
-      "links": ["Українська", "English", "Русский", "Polski"]
-    },
     "legal": {
       "links": ["Terms", "Privacy", "Cookies"]
     },
