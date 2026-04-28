@@ -53,7 +53,7 @@ export default function HowItWorks() {
           className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
 
           {steps.map((step) => (
-            <motion.div key={step.num} variants={fadeInUp} className="relative">
+            <motion.div key={step.num} variants={fadeInUp} className="relative h-full">
               <TiltCard>
                 <div className="glass-card !p-6 h-full">
                   <div className="flex items-center gap-3 mb-4">

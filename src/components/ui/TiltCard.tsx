@@ -32,13 +32,13 @@ export default function TiltCard({ children, className = '', glare = true }: Til
   };
 
   return (
-    <div className="tilt-card">
+    <div className="tilt-card h-full">
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
-        className={`relative transition-transform duration-300 ease-out ${className}`}
+        className={`relative h-full transition-transform duration-300 ease-out ${className}`}
         style={{ transform }}
       >
         {children}
