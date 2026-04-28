@@ -5,11 +5,9 @@ import { routing } from '@/i18n/routing';
  * Dynamic sitemap.xml for Draft2Live with hreflang alternates.
  *
  * Generates one entry per public page, with <xhtml:link rel="alternate"
- * hreflang="..."> for each locale (uk, en, ru, pl) plus x-default.
- *
- * Previously /sitemap.xml returned 404 and there were no hreflang tags,
- * so Google could not discover locale variants and might serve the wrong
- * language to users. Fixed as part of P0 SEO remediation.
+ * hreflang="..."> for the en locale plus x-default. After EN-only migration,
+ * the loop runs once but the structure is preserved so future locales can
+ * be added by simply expanding routing.locales.
  */
 
 // Required for Next.js 16 with `output: 'export'` — without this, the build
@@ -38,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const locale of routing.locales) {
       languages[locale] = `${baseUrl}/${locale}/${route.path}`;
     }
-    // x-default points at the default locale variant (uk) per next-intl config.
+    // x-default points at the default locale variant (en) per next-intl config.
     languages['x-default'] = `${baseUrl}/${routing.defaultLocale}/${route.path}`;
 
     return routing.locales.map((locale) => ({

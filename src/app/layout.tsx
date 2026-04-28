@@ -14,11 +14,10 @@ export const metadata: Metadata = {
   icons: { icon: '/favicon.svg' },
 };
 
-// html lang is hardcoded to "uk" (default locale). For /en/ pages next-intl sets lang
-// via a client-side effect in LocaleLayout. Acceptable compromise for static export.
+// html lang is hardcoded to "en" — only locale shipped after EN-only migration.
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="uk" className={`${inter.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
       <body className="noise min-h-screen antialiased">{children}</body>
     </html>
   );

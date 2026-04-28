@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 // AND add the href here in matching position.
 const productHrefs = ['#features', '#pricing'];
 const companyHrefs = ['mailto:info@draft2live.ai'];
-const languageHrefs = ['/uk/', '/en/', '/ru/', '/pl/'];
 const legalHrefs = ['/terms/', '/privacy/', '/cookies/'];
 
 // Social icon components removed until real social profiles are available.
@@ -16,7 +15,6 @@ export default function Footer() {
   const t = useTranslations('footer');
   const productLabels = t.raw('product.links') as string[];
   const companyLabels = t.raw('company.links') as string[];
-  const languageLabels = t.raw('languages.links') as string[];
   const legalLabels = t.raw('legal.links') as string[];
   // Filter out labels without a real href (safety net if messages has more labels than hrefs).
   const productLinks = productLabels
@@ -24,9 +22,6 @@ export default function Footer() {
     .filter((l): l is { label: string; href: string } => Boolean(l.href));
   const companyLinks = companyLabels
     .map((label, i) => ({ label, href: companyHrefs[i] }))
-    .filter((l): l is { label: string; href: string } => Boolean(l.href));
-  const languages = languageLabels
-    .map((label, i) => ({ label, href: languageHrefs[i] }))
     .filter((l): l is { label: string; href: string } => Boolean(l.href));
   const legalLinks = legalLabels
     .map((label, i) => ({ label, href: legalHrefs[i] }))
@@ -104,24 +99,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Languages column */}
-          <div className="md:col-span-2">
-            <h4 className="text-white font-semibold text-sm mb-4">
-              {t('languages.title')}
-            </h4>
-            <ul className="space-y-3">
-              {languages.map((lang) => (
-                <li key={lang.label}>
-                  <a
-                    href={lang.href}
-                    className="text-text-secondary text-sm hover:text-white transition-colors"
-                  >
-                    {lang.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom bar */}

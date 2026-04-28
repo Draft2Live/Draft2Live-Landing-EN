@@ -118,8 +118,8 @@ export default function EarlyAccessModal() {
 
     const locale =
       typeof window !== 'undefined'
-        ? window.location.pathname.split('/')[1] || 'uk'
-        : 'uk';
+        ? window.location.pathname.split('/')[1] || 'en'
+        : 'en';
 
     try {
       await fetch('/', {

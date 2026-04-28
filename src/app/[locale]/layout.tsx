@@ -5,7 +5,6 @@ import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
 import { EarlyAccessProvider } from '@/lib/EarlyAccessContext';
 import EarlyAccessModal from '@/components/ui/EarlyAccessModal';
-import LangSync from '@/components/ui/LangSync';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -24,13 +23,8 @@ export async function generateMetadata({
     alternates: {
       canonical: `/${locale}/`,
       languages: {
-        uk: '/uk/',
         en: '/en/',
-        ru: '/ru/',
-        pl: '/pl/',
-        // x-default points to the default locale (uk per routing config) and
-        // is used by Google for users whose language doesn't match any locale.
-        'x-default': '/uk/',
+        'x-default': '/en/',
       },
     },
     openGraph: {
@@ -38,7 +32,7 @@ export async function generateMetadata({
       description: t('ogDescription'),
       url: `https://draft2live.ai/${locale}/`,
       siteName: 'Draft2Live',
-      locale: locale === 'uk' ? 'uk_UA' : locale === 'ru' ? 'ru_RU' : locale === 'pl' ? 'pl_PL' : 'en_US',
+      locale: 'en_US',
       type: 'website',
       // Locale-specific OG images for Facebook/LinkedIn/Twitter sharing previews.
       // Each locale ships its own headline translation baked into the artwork.
@@ -114,7 +108,6 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider>
-      <LangSync locale={locale} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

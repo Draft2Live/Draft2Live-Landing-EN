@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   output: 'export',
-  // Trailing slashes required for static hosting under /uk/, /en/ paths
+  // Trailing slashes required for static hosting under /en/ paths
   trailingSlash: true,
 };
 
