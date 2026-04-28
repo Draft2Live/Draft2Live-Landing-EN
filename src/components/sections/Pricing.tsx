@@ -7,13 +7,15 @@ import { useTranslations } from 'next-intl';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
-import { useEarlyAccess } from '@/lib/EarlyAccessContext';
+
+type PlanId = 'free' | 'connect' | 'team' | 'enterprise';
 
 interface PlanFeature {
   text: string;
 }
 
 interface Plan {
+  id: PlanId;
   name: string;
   badge?: string;
   monthlyPrice: number;
@@ -21,54 +23,60 @@ interface Plan {
   description: string;
   features: PlanFeature[];
   ctaText: string;
-  ctaHref: string;
   featured?: boolean;
   ctaVariant: 'primary' | 'secondary';
   isContactSales?: boolean;
 }
 
 const planMeta: {
+  id: PlanId;
   name: string;
   monthlyPrice: number;
   annualPrice: number;
-  ctaHref: string;
   featured?: boolean;
   ctaVariant: 'primary' | 'secondary';
   hasBadge?: boolean;
   isContactSales?: boolean;
 }[] = [
   {
+    id: 'free',
     name: 'Free',
     monthlyPrice: 0,
     annualPrice: 0,
-    ctaHref: 'https://app.draft2live.ai/signup',
     ctaVariant: 'secondary',
   },
   {
+    id: 'connect',
     name: 'Connect',
     monthlyPrice: 49,
     annualPrice: 39,
-    ctaHref: 'https://app.draft2live.ai/signup?plan=connect',
     featured: true,
     ctaVariant: 'primary',
     hasBadge: true,
   },
   {
+    id: 'team',
     name: 'Team',
     monthlyPrice: 149,
     annualPrice: 119,
-    ctaHref: 'https://app.draft2live.ai/signup?plan=team',
     ctaVariant: 'secondary',
   },
   {
+    id: 'enterprise',
     name: 'Enterprise',
     monthlyPrice: 0, // not rendered — shown as "Custom" via customPriceLabel
     annualPrice: 0,
-    ctaHref: 'mailto:sales@draft2live.ai?subject=Enterprise%20plan%20inquiry',
     ctaVariant: 'secondary',
     isContactSales: true,
   },
 ];
+
+function getCtaHref(planId: PlanId, isAnnual: boolean): string {
+  const period = isAnnual ? 'annual' : 'monthly';
+  if (planId === 'free') return 'https://draft2live.ai/en/register';
+  if (planId === 'enterprise') return 'https://draft2live.ai/en?plan=enterprise';
+  return `https://draft2live.ai/en/register?plan=${planId}&period=${period}`;
+}
 
 function CheckIcon() {
   return (
@@ -83,13 +91,12 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const { open: openEarlyAccess } = useEarlyAccess();
 
   const plans: Plan[] = planMeta.map((meta, i) => ({
+    id: meta.id,
     name: meta.name,
     monthlyPrice: meta.monthlyPrice,
     annualPrice: meta.annualPrice,
-    ctaHref: meta.ctaHref,
     ctaVariant: meta.ctaVariant,
     featured: meta.featured,
     isContactSales: meta.isContactSales,
@@ -215,13 +222,12 @@ export default function Pricing() {
                     ))}
                   </ul>
 
-                  {/* CTA — product is live, route directly to signup.
+                  {/* CTA — product is live, route directly to register.
                       EarlyAccessModal is reserved for non-ready flows; Pricing
-                      goes to the actual app. */}
+                      goes to the actual app. URL responds to isAnnual. */}
                   <Button
-                    href={plan.ctaHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={getCtaHref(plan.id, isAnnual)}
+                    rel="noopener"
                     variant={plan.ctaVariant}
                     className="w-full justify-center"
                   >
