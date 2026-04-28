@@ -63,7 +63,7 @@ export default function Metrics() {
 
   return (
     <section className="relative py-12 md:py-16 section-glow-divider section-darker">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1640px] px-6">
         <motion.div ref={ref} initial="hidden" animate={isInView ? 'visible' : 'hidden'}
           variants={staggerContainer}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">

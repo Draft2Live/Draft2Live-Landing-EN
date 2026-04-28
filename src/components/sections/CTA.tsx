@@ -30,7 +30,7 @@ export default function CTA() {
       <div className="absolute bottom-10 right-[10%] w-[250px] h-[250px] bg-teal-400/10 blur-[80px] rounded-full pointer-events-none animate-[floatOrb2_15s_ease-in-out_infinite_alternate]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-white/[0.03] blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-[1640px] mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Brand image with tilt on hover */}
           <div

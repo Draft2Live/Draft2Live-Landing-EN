@@ -26,7 +26,7 @@ export default function PriceAnchor() {
 
   return (
     <section className="relative py-20 md:py-28 section-teal" ref={ref}>
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1640px] px-6">
         <SectionHeader badge={t('header.badge')} title={t('header.title')} />
 
         <motion.div initial="hidden" animate={isInView ? 'visible' : 'hidden'} variants={staggerContainer}

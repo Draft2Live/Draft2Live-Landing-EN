@@ -490,7 +490,7 @@ export default function Features() {
 
   return (
     <section id="features" className="relative py-20 md:py-28 overflow-hidden section-glow-divider section-darker">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[1640px] px-4 sm:px-6">
         <motion.div
           ref={sectionRef}
           initial="hidden"

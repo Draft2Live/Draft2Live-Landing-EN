@@ -108,7 +108,7 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="relative py-28 md:py-40 overflow-hidden section-accent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-[1640px] mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
           initial="hidden"

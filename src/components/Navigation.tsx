@@ -78,7 +78,7 @@ export default function Navigation() {
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-      <nav aria-label={t('ariaLabel')} className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
+      <nav aria-label={t('ariaLabel')} className="mx-auto max-w-[1640px] px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="relative z-10">
           <Image src="/logo-white.svg" alt="Draft2Live" width={150} height={28} priority />

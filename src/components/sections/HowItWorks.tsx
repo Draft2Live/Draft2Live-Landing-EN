@@ -45,7 +45,7 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="relative py-20 md:py-28 overflow-hidden section-dark">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1640px] px-6">
         <SectionHeader badge={t('header.badge')} title={t('header.title')} />
 
         <motion.div ref={ref} initial="hidden" animate={isInView ? 'visible' : 'hidden'}
