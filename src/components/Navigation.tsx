@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useMotionValueEvent, useScroll, useSpring } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -25,23 +25,52 @@ export default function Navigation() {
     setScrolled(latest > 50);
   });
 
-  // Track active section
-  const updateActiveSection = useCallback(() => {
-    const sections = navLinkHrefs.map(l => l.href.replace('#', ''));
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const el = document.getElementById(sections[i]);
-      if (el && el.getBoundingClientRect().top <= 120) {
-        setActiveSection(sections[i]);
-        return;
-      }
-    }
-    setActiveSection('');
-  }, []);
-
+  // Track active section via IntersectionObserver.
+  // rootMargin: top -80px accounts for the fixed h-20 header; bottom -50% means a
+  // section becomes "active" when its top crosses below the header AND its body
+  // still occupies the upper half of the viewport. Only nav-linked sections are
+  // observed; bento/compare are intentionally excluded so they never trigger the spy.
   useEffect(() => {
-    window.addEventListener('scroll', updateActiveSection, { passive: true });
-    return () => window.removeEventListener('scroll', updateActiveSection);
-  }, [updateActiveSection]);
+    const ids = navLinkHrefs.map(l => l.href.replace('#', ''));
+    const elements = ids
+      .map(id => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (elements.length === 0) return;
+
+    const visible = new Map<string, number>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            visible.set(entry.target.id, entry.intersectionRatio);
+          } else {
+            visible.delete(entry.target.id);
+          }
+        }
+        if (visible.size === 0) {
+          setActiveSection('');
+          return;
+        }
+        // Pick the section closest to the top of the active band (matches DOM order).
+        let best: string = '';
+        let bestTop = Infinity;
+        for (const id of visible.keys()) {
+          const el = document.getElementById(id);
+          if (!el) continue;
+          const top = el.getBoundingClientRect().top;
+          if (top < bestTop) {
+            bestTop = top;
+            best = id;
+          }
+        }
+        setActiveSection(best);
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: [0, 0.01, 0.5, 1] }
+    );
+
+    elements.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
