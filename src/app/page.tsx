@@ -1,31 +1,37 @@
-'use client';
-import { useEffect } from 'react';
-import { routing } from '@/i18n/routing';
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/sections/Hero';
+import LogoMarquee from '@/components/sections/LogoMarquee';
+import HowItWorks from '@/components/sections/HowItWorks';
+import Features from '@/components/sections/Features';
+// Testimonials section removed: current testimonials are placeholders, not real customers.
+// Will be re-enabled when we have verified case studies / real testimonials.
+import UseCases from '@/components/sections/UseCases';
+import Metrics from '@/components/sections/Metrics';
+import PriceAnchor from '@/components/sections/PriceAnchor';
+import Pricing from '@/components/sections/Pricing';
+import FAQ from '@/components/sections/FAQ';
+import CTA from '@/components/sections/CTA';
+import Footer from '@/components/sections/Footer';
+import StickyMobileCTA from '@/components/ui/StickyMobileCTA';
 
-// Root "/" path — redirects to the default locale. Required for static export
-// because there's no server middleware to rewrite the request.
-export default function RootRedirect() {
-  useEffect(() => {
-    window.location.replace(`/${routing.defaultLocale}/`);
-  }, []);
-
+export default function Home() {
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: '#031931',
-      color: '#fff',
-      fontFamily: 'sans-serif',
-      fontSize: '14px',
-    }}>
-      <noscript>
-        <meta httpEquiv="refresh" content={`0; url=/${routing.defaultLocale}/`} />
-        <a href={`/${routing.defaultLocale}/`} style={{ color: '#04b8b7' }}>
-          Continue to {routing.defaultLocale}
-        </a>
-      </noscript>
-    </div>
+    <>
+      <Navigation />
+      <main id="main-content">
+        <Hero />
+        <LogoMarquee />
+        <HowItWorks />
+        <Features />
+        <UseCases />
+        <Metrics />
+        <PriceAnchor />
+        <Pricing />
+        <FAQ />
+        <CTA />
+      </main>
+      <StickyMobileCTA />
+      <Footer />
+    </>
   );
 }

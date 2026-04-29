@@ -1,5 +1,5 @@
 'use client';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 
 // Only real destinations — dead '#' links removed per design review.
 // When a real page ships (API docs, blog, about), re-add the label in messages/*.json
@@ -12,7 +12,7 @@ const legalHrefs = ['/terms/', '/privacy/', '/cookies/'];
 // LinkedIn / X / YouTube / Telegram icons lived here but all pointed to href='#'.
 
 export default function Footer() {
-  const t = useTranslations('footer');
+  const t = getTranslations('footer');
   const productLabels = t.raw('product.links') as string[];
   const companyLabels = t.raw('company.links') as string[];
   const legalLabels = t.raw('legal.links') as string[];

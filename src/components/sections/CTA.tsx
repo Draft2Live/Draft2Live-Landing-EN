@@ -2,12 +2,12 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 import Button from '@/components/ui/Button';
 
 export default function CTA() {
-  const t = useTranslations('cta');
+  const t = getTranslations('cta');
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 

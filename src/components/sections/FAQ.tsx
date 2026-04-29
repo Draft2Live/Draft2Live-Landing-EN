@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 import SectionHeader from '@/components/ui/SectionHeader';
 
@@ -12,7 +12,7 @@ interface FAQItem {
 }
 
 export default function FAQ() {
-  const t = useTranslations('faq');
+  const t = getTranslations('faq');
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const faqItems = t.raw('items') as FAQItem[];

@@ -1,9 +1,6 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/sections/Footer';
 import Link from 'next/link';
-import messages from '../../../messages/en.json';
 
 export const dynamic = 'force-static';
 
@@ -13,9 +10,8 @@ export const metadata = {
 };
 
 export default function TermsPage() {
-  setRequestLocale('en');
   return (
-    <NextIntlClientProvider locale="en" messages={messages}>
+    <>
       <Navigation />
       <main className="min-h-screen pt-32 pb-20">
         <article className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -213,6 +209,6 @@ export default function TermsPage() {
         </article>
       </main>
       <Footer />
-    </NextIntlClientProvider>
+    </>
   );
 }

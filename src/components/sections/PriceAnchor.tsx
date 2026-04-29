@@ -1,7 +1,7 @@
 'use client';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { fadeInLeft, fadeInRight, staggerContainer } from '@/lib/animations';
 import SectionHeader from '@/components/ui/SectionHeader';
 
@@ -14,7 +14,7 @@ const competitorMeta = [
 ];
 
 export default function PriceAnchor() {
-  const t = useTranslations('priceAnchor');
+  const t = getTranslations('priceAnchor');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const competitors = competitorMeta.map((c, i) => ({

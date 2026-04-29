@@ -1,7 +1,7 @@
 'use client';
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { staggerContainer, fadeInUp, easeOutExpo } from '@/lib/animations';
 
 interface MetricProps {
@@ -50,7 +50,7 @@ function AnimatedCounter({ target, prefix = '', suffix = '', label, triggered }:
 }
 
 export default function Metrics() {
-  const t = useTranslations('metrics');
+  const t = getTranslations('metrics');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 

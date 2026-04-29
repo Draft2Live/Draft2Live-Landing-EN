@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -87,7 +87,7 @@ function CheckIcon() {
 }
 
 export default function Pricing() {
-  const t = useTranslations('pricing');
+  const t = getTranslations('pricing');
   const [isAnnual, setIsAnnual] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });

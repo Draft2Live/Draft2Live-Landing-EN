@@ -1,7 +1,7 @@
 'use client';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 import SectionHeader from '@/components/ui/SectionHeader';
 import TiltCard from '@/components/ui/TiltCard';
@@ -32,7 +32,7 @@ const stepIcons = [
 ];
 
 export default function HowItWorks() {
-  const t = useTranslations('howItWorks');
+  const t = getTranslations('howItWorks');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const items = t.raw('items') as { title: string; desc: string }[];

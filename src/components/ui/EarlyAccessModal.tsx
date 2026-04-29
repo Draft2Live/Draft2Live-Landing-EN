@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { useEarlyAccess } from '@/lib/EarlyAccessContext';
 
 function CheckmarkAnimation() {
@@ -34,7 +34,7 @@ function CheckmarkAnimation() {
 }
 
 export default function EarlyAccessModal() {
-  const t = useTranslations('earlyAccess');
+  const t = getTranslations('earlyAccess');
   const { isOpen, selectedPlan, keyword, close } = useEarlyAccess();
   const [email, setEmail] = useState('');
   const [gdprConsent, setGdprConsent] = useState(false);

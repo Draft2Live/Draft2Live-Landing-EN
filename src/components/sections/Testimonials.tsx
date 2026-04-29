@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 import SectionHeader from '@/components/ui/SectionHeader';
 
@@ -38,7 +38,7 @@ function StarRating({ label }: { label: string }) {
 }
 
 export default function Testimonials() {
-  const tr = useTranslations('testimonials');
+  const tr = getTranslations('testimonials');
   const items = tr.raw('items') as { quote: string; author: string; role: string; initials: string }[];
   const testimonials: Testimonial[] = items.map((item, i) => ({
     ...item,

@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValueEvent, useScroll, useSpring } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 
 const navLinkHrefs = [
   { key: 'features', href: '#features' },
@@ -13,7 +13,7 @@ const navLinkHrefs = [
 ];
 
 export default function Navigation() {
-  const t = useTranslations('nav');
+  const t = getTranslations('nav');
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');

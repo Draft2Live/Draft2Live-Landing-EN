@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { useTranslations, useLocale } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { staggerContainer } from '@/lib/animations';
 
 const GRID_COLS = 28;
@@ -90,11 +90,10 @@ function StaggerGrid() {
 }
 
 function VideoPoster() {
-  const t = useTranslations('hero');
-  const locale = useLocale();
+  const t = getTranslations('hero');
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const videoSrc = `/videos/demo-${locale}.mp4`;
+  const videoSrc = `/videos/demo-en.mp4`;
 
   const handlePlay = () => {
     setPlaying(true);
@@ -215,7 +214,7 @@ function VideoPoster() {
 }
 
 export default function Hero() {
-  const t = useTranslations('hero');
+  const t = getTranslations('hero');
   const words = t.raw('typingWords') as string[];
   const chipExamples = t.raw('chipExamples') as string[];
   const trustStats = t.raw('trustStats') as { value: string; label: string }[];

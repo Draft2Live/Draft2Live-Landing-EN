@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 
 export default function StickyMobileCTA() {
-  const t = useTranslations('stickyMobileCTA');
+  const t = getTranslations('stickyMobileCTA');
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

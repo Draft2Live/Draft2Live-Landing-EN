@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from '@/lib/translations';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 import SectionHeader from '@/components/ui/SectionHeader';
 
@@ -76,7 +76,7 @@ const AUTO_INTERVAL = 5000;
 
 /* ── SERP Analysis Visual ── */
 function SerpVisual() {
-  const t = useTranslations('features.visuals.serp');
+  const t = getTranslations('features.visuals.serp');
   const results = (t.raw('results') as { title: string; domain: string }[]).map((r, i) => ({
     pos: i + 1,
     title: r.title,
@@ -117,7 +117,7 @@ function SerpVisual() {
 
 /* ── Brand Voice Visual ── */
 function BrandVoiceVisual() {
-  const t = useTranslations('features.visuals.brandVoice');
+  const t = getTranslations('features.visuals.brandVoice');
   const rawMetrics = t.raw('metrics') as { label: string; value: string }[];
   // Percentages are static design values, not translated.
   const pctByIndex = [85, 62, 48, 78];
@@ -175,7 +175,7 @@ function BrandVoiceVisual() {
 
 /* ── SEO Audit Visual ── */
 function SeoAuditVisual() {
-  const t = useTranslations('features.visuals.seoAudit');
+  const t = getTranslations('features.visuals.seoAudit');
   const names = t.raw('metrics') as string[];
   // Scores + ok flags are static design values.
   const scoresAndOk: [number, boolean][] = [[92, true], [88, true], [95, true], [84, false], [90, true], [78, false], [91, true], [96, true]];
@@ -227,7 +227,7 @@ function SeoAuditVisual() {
 
 /* ── CMS Publish Visual ── */
 function CmsPublishVisual() {
-  const t = useTranslations('features.visuals.cmsPublish');
+  const t = getTranslations('features.visuals.cmsPublish');
   return (
     <div className="relative h-full w-full rounded-2xl overflow-hidden bg-surface/50 border border-border/40 p-4 md:p-5">
       <div className="absolute w-48 h-48 rounded-full bg-teal-500/10 blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -334,7 +334,7 @@ function CmsPublishVisual() {
 
 /* ── Knowledge Base Visual ── */
 function KnowledgeBaseVisual() {
-  const t = useTranslations('features.visuals.knowledgeBase');
+  const t = getTranslations('features.visuals.knowledgeBase');
   // Filenames stay universal (extensions are international)
   const docs = [
     { name: 'product-specs.pdf', size: '2.4 MB', type: 'PDF' },
@@ -379,7 +379,7 @@ function KnowledgeBaseVisual() {
 
 /* ── White-label Visual ── */
 function WhiteLabelVisual() {
-  const t = useTranslations('features.visuals.whiteLabel');
+  const t = getTranslations('features.visuals.whiteLabel');
   // Brand names are locale-aware — UA suffix belongs on UK landing only.
   // Styling (colors) stays in code; only the name/URL varies per locale.
   const names = t.raw('brands') as string[];
@@ -435,7 +435,7 @@ function CheckSmall() {
 }
 
 export default function Features() {
-  const t = useTranslations('features');
+  const t = getTranslations('features');
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-50px' });
   const [active, setActive] = useState(0);
