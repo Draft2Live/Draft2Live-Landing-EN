@@ -1,11 +1,11 @@
 {
   "metadata": {
     "title": "Draft2Live: from keyword to published article in 20 minutes",
-    "description": "AI platform for SEO content: country-specific SERP analysis, Brand Voice, SEO audit, and one-click publishing to WordPress, Drupal, or Shopify Blog.",
+    "description": "AI platform for SEO content: country-specific SERP analysis, tone of voice control, SEO audit, and one-click publishing to WordPress, Drupal, or Shopify Blog.",
     "ogTitle": "Draft2Live: AI for SEO content that publishes itself",
-    "ogDescription": "Enter a keyword. Get a published article on your site in 20 minutes. SERP analysis, Brand Voice, CMS publishing.",
+    "ogDescription": "Enter a keyword. Get a published article on your site in 20 minutes. SERP analysis, tone of voice, CMS publishing.",
     "twitterTitle": "Draft2Live: AI for SEO content",
-    "twitterDescription": "From keyword to published article in 20 minutes. SERP analysis, Brand Voice, one-click publishing."
+    "twitterDescription": "From keyword to published article in 20 minutes. SERP analysis, tone of voice, one-click publishing."
   },
   "jsonLd": {
     "orgDescription": "AI platform that turns a keyword into an SEO-optimized article published on your website in 20 minutes."
@@ -28,7 +28,7 @@
     "titleLine2Prefix": "to",
     "titleLine3": "live on your site in 20 min",
     "typingWords": ["an SEO article", "a blog post", "a landing page", "a how-to guide", "a product review"],
-    "subtitle": "Enter a phrase. AI analyzes the TOP 10 in your target country and writes an article in your brand's style. Publish to WordPress, Drupal, or Shopify Blog in one click.",
+    "subtitle": "Enter a phrase. AI analyzes the TOP 10 in your target country and writes an article in a tone you choose. Publish to WordPress, Drupal, or Shopify Blog in one click.",
     "searchPlaceholder": "Enter a keyword for your article...",
     "searchAriaLabel": "Keyword for article",
     "searchCta": "Write article →",
@@ -67,8 +67,8 @@
         "desc": "Breaks down structure, keywords, volume, and strategy of each competitor."
       },
       {
-        "title": "AI writes in your style",
-        "desc": "Uses SERP data, your Brand Voice, and Knowledge Base documents to write the article."
+        "title": "AI writes in your chosen tone",
+        "desc": "Uses SERP data, your selected tone of voice, and Knowledge Base documents to write the article."
       },
       {
         "title": "One click, article on your site",
@@ -94,14 +94,14 @@
         "visual": { "label": "45 languages", "stat": "TOP 10 SERP" }
       },
       {
-        "title": "Brand Voice",
-        "desc": "Upload 10+ texts and AI learns your style, tone, and terminology. Every article sounds like yours.",
+        "title": "Tone of voice",
+        "desc": "Choose the tone for your articles — formal, casual, authoritative, or friendly. Same control on every plan.",
         "details": [
-          "Analyzes tone, vocabulary, structure",
-          "Separate profile for each project",
-          "Style improves with each text"
+          "Formal, casual, authoritative, friendly presets",
+          "Switch tone per article",
+          "Available on every plan"
         ],
-        "visual": { "label": "Your style", "stat": "10+ samples" }
+        "visual": { "label": "Your tone", "stat": "4 presets" }
       },
       {
         "title": "SEO audit before publishing",
@@ -138,7 +138,7 @@
         "desc": "Clients see your brand and interface. Scale content without hiring new copywriters.",
         "details": [
           "Custom domain and logo",
-          "Separate Brand Voice per client",
+          "Separate tone of voice per client",
           "Team access with roles"
         ],
         "visual": { "label": "Your brand", "stat": "White-label" }
@@ -157,14 +157,14 @@
         "done": "TOP 10 analysis complete"
       },
       "brandVoice": {
-        "title": "Your Style Analysis",
+        "title": "Tone of Voice",
         "metrics": [
           { "label": "Tone", "value": "Professional" },
           { "label": "Complexity", "value": "Medium" },
           { "label": "Emotion", "value": "Moderate" },
           { "label": "Technical", "value": "High" }
         ],
-        "yourText": "Your text",
+        "yourText": "Selected tone",
         "aiResult": "AI output"
       },
       "seoAudit": {
@@ -269,7 +269,7 @@
       {
         "persona": "Digital agency",
         "headline": "White-label under your brand",
-        "desc": "Connect client sites, set up Brand Voice for each. Clients see your interface. Scale without hiring.",
+        "desc": "Connect client sites, set the tone of voice for each. Clients see your interface. Scale without hiring.",
         "metrics": ["Up to 15 sites", "Team access", "Your brand"]
       },
       {
@@ -331,7 +331,6 @@
         "features": [
           "Up to 20 articles per month",
           "2 sites (WordPress/Drupal/Shopify)",
-          "1 Brand Voice",
           "5 languages with geo-targeting",
           "Meta tags, alt texts, internal linking",
           "3 documents in Knowledge Base"
@@ -344,7 +343,6 @@
           "Up to 100 articles per month",
           "5 sites",
           "45 languages with geo-targeting",
-          "5 Brand Voices",
           "Content calendar and team access",
           "API access",
           "Priority support"
@@ -397,8 +395,8 @@
       },
       {
         "q": "Is it suitable for an agency with multiple clients?",
-        "a": "Yes, that's exactly what the Team and Enterprise plans are for. You connect multiple sites, set up separate Brand Voice for each client, and with white-label clients don't even know you're using Draft2Live.",
-        "aPlain": "Yes, that's exactly what the Team and Enterprise plans are for. You connect multiple sites, set up separate Brand Voice for each client, and with white-label clients don't even know you're using Draft2Live."
+        "a": "Yes, that's exactly what the Team and Enterprise plans are for. You connect multiple sites, set a separate tone of voice for each client, and with white-label clients don't even know you're using Draft2Live.",
+        "aPlain": "Yes, that's exactly what the Team and Enterprise plans are for. You connect multiple sites, set a separate tone of voice for each client, and with white-label clients don't even know you're using Draft2Live."
       },
       {
         "q": "What if it doesn't work for me?",

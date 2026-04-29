@@ -115,7 +115,7 @@ function SerpVisual() {
   );
 }
 
-/* ── Brand Voice Visual ── */
+/* ── Tone of Voice Visual ── */
 function BrandVoiceVisual() {
   const t = getTranslations('features.visuals.brandVoice');
   const rawMetrics = t.raw('metrics') as { label: string; value: string }[];
