@@ -39,7 +39,7 @@
       "laptop reviews 2026",
       "SaaS marketing"
     ],
-    "microcopy": "No credit card · 3 articles free · Setup in 2 minutes",
+    "microcopy": "No credit card · Up to 3 articles free · Setup in 2 minutes",
     "videoAriaLabel": "Watch Draft2Live demo",
     "videoTitle": "Watch demo",
     "videoSubtitle": "2 min, from keyword to published article",
@@ -317,7 +317,7 @@
       {
         "description": "Try without commitment, no card required",
         "features": [
-          "3 articles per month",
+          "Up to 3 articles per month",
           "Publishing on draft2live.com",
           "3 languages with geo-targeting",
           "TOP 10 SERP analysis",
@@ -329,7 +329,7 @@
         "badge": "Most Popular",
         "description": "For freelancers who earn from content",
         "features": [
-          "20 articles per month",
+          "Up to 20 articles per month",
           "2 sites (WordPress/Drupal/Shopify)",
           "1 Brand Voice",
           "5 languages with geo-targeting",
@@ -341,7 +341,7 @@
       {
         "description": "For agencies and content teams",
         "features": [
-          "100 articles per month",
+          "Up to 100 articles per month",
           "5 sites",
           "45 languages with geo-targeting",
           "5 Brand Voices",
@@ -401,15 +401,15 @@
       },
       {
         "q": "What if it doesn't work for me?",
-        "a": "Start with the free plan: 3 articles per month with full SERP analysis and SEO audit, no card required. Paid plans come with a 30-day money-back guarantee. You can cancel your subscription in one click at any time.",
-        "aPlain": "Start with the free plan: 3 articles per month with full SERP analysis and SEO audit, no card required. Paid plans come with a 30-day money-back guarantee. You can cancel your subscription in one click at any time."
+        "a": "Start with the free plan: up to 3 articles per month with full SERP analysis and SEO audit, no card required. Paid plans come with a 30-day money-back guarantee. You can cancel your subscription in one click at any time.",
+        "aPlain": "Start with the free plan: up to 3 articles per month with full SERP analysis and SEO audit, no card required. Paid plans come with a 30-day money-back guarantee. You can cancel your subscription in one click at any time."
       }
     ]
   },
   "cta": {
     "titlePart1": "Your competitors are already publishing.",
     "titlePart2": "Are you?",
-    "subtitle": "3 articles free. No credit card. Results in 20 minutes.",
+    "subtitle": "Up to 3 articles free. No credit card. Results in 20 minutes.",
     "ctaPrimary": "Start free",
     "ctaSecondary": "Watch demo",
     "trustLine": "WordPress + Drupal + Shopify · 45 languages with geo-targeting · 30-day money-back guarantee",
@@ -439,7 +439,7 @@
     "closeAriaLabel": "Close",
     "statusLabel": "Launching in a few weeks",
     "title": "Be among the first to publish articles in 20 minutes",
-    "subtitle": "3 articles free + priority when we launch",
+    "subtitle": "Up to 3 articles free + priority when we launch",
     "bonus": "First 100 sign-ups: Connect plan free for 30 days",
     "planBadge": "Selected plan: {plan}",
     "keywordBadge": "Your keyword: {keyword}",
