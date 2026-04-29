@@ -23,3 +23,9 @@ The following skills are available in `.claude/skills/` for legal document work:
 - **Path:** `.claude/skills/legal-skills/skills/gdpr-privacy-notice-eu-oliver-schmidt-prietz/`
 - **Use for:** Creating GDPR privacy notices for EU/EEA (DE, FR, AT, IT, ES, NL, BE, IE, UK)
 - **Files:** `SKILL.md`, `references/`
+
+## Workflow preferences
+
+- **Auto-commit and push after every code change.** When working on this repo, do NOT ask the user "should I commit?" or "want me to push?" — just commit with a clear conventional-commit message (`feat:` / `fix:` / `chore:` / `refactor:` / `docs:`) and push to the current working branch. Use small focused commits per logical change. Keep PR description / branch info up to date.
+- **Never push to `main` directly.** Always push to a feature branch and open/update a PR. The user explicitly merges PRs themselves.
+- **Token handling**: never persist GitHub tokens in `.git/config`, `~/.gitconfig`, or any file. Tokens are passed inline via `GH_TOKEN` env var or one-shot push URL only.
