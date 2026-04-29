@@ -52,7 +52,7 @@ export default function TermsPage() {
                 <li>AI image generation and optimisation</li>
                 <li>SERP analysis and keyword research</li>
                 <li>Comprehensive SEO content optimisation</li>
-                <li>Automated publishing to CMS platforms (WordPress, Drupal)</li>
+                <li>Automated publishing to CMS platforms (WordPress, Drupal, Shopify)</li>
                 <li>Automated article translation</li>
                 <li>SEO audit of generated content</li>
               </ul>

@@ -1,7 +1,7 @@
 'use client';
 import { getTranslations } from '@/lib/translations';
 
-const logos = ['WordPress', 'Drupal', 'Google', 'Claude', 'DeepL', 'Flux', 'Google Search Console'];
+const logos = ['WordPress', 'Drupal', 'Shopify', 'Google', 'Claude', 'DeepL', 'Flux', 'Google Search Console'];
 
 export default function LogoMarquee() {
   const t = getTranslations('logoMarquee');

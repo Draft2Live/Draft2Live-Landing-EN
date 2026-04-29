@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Draft2Live: from keyword to published article in 20 minutes",
-    "description": "AI platform for SEO content: country-specific SERP analysis, Brand Voice, SEO audit, and one-click publishing to WordPress or Drupal.",
+    "description": "AI platform for SEO content: country-specific SERP analysis, Brand Voice, SEO audit, and one-click publishing to WordPress, Drupal, or Shopify Blog.",
     "ogTitle": "Draft2Live: AI for SEO content that publishes itself",
     "ogDescription": "Enter a keyword. Get a published article on your site in 20 minutes. SERP analysis, Brand Voice, CMS publishing.",
     "twitterTitle": "Draft2Live: AI for SEO content",
@@ -23,12 +23,12 @@
     }
   },
   "hero": {
-    "badge": "5,000+ articles published · 45 languages · WordPress + Drupal",
+    "badge": "5,000+ articles published · 45 languages · WordPress + Drupal + Shopify",
     "titleLine1": "From keyword",
     "titleLine2Prefix": "to",
     "titleLine3": "live on your site in 20 min",
     "typingWords": ["an SEO article", "a blog post", "a landing page", "a how-to guide", "a product review"],
-    "subtitle": "Enter a phrase. AI analyzes the TOP 10 in your target country and writes an article in your brand's style. Publish to WordPress or Drupal in one click.",
+    "subtitle": "Enter a phrase. AI analyzes the TOP 10 in your target country and writes an article in your brand's style. Publish to WordPress, Drupal, or Shopify Blog in one click.",
     "searchPlaceholder": "Enter a keyword for your article...",
     "searchAriaLabel": "Keyword for article",
     "searchCta": "Write article →",
@@ -46,7 +46,7 @@
     "trustStats": [
       { "value": "5,000+", "label": "articles published" },
       { "value": "45", "label": "languages with geo-targeting" },
-      { "value": "2", "label": "CMS: WordPress + Drupal" }
+      { "value": "3", "label": "CMS: WordPress, Drupal, Shopify" }
     ]
   },
   "logoMarquee": {
@@ -72,7 +72,7 @@
       },
       {
         "title": "One click, article on your site",
-        "desc": "Publish to WordPress or Drupal. Meta tags, images, alt texts, and internal links are added automatically."
+        "desc": "Publish to WordPress, Drupal, or Shopify Blog. Meta tags, images, alt texts, and internal links are added automatically."
       }
     ]
   },
@@ -115,13 +115,13 @@
       },
       {
         "title": "One-click CMS publishing",
-        "desc": "WordPress and Drupal. Article goes to your site with images, meta tags, alt texts, and internal links.",
+        "desc": "WordPress, Drupal, and Shopify Blog. Article goes to your site or store with images, meta tags, alt texts, and internal links.",
         "details": [
           "Automatic meta tags and Schema",
           "Optimized images with alt text",
           "Internal linking"
         ],
-        "visual": { "label": "1 click", "stat": "WordPress & Drupal" }
+        "visual": { "label": "1 click", "stat": "WordPress, Drupal & Shopify" }
       },
       {
         "title": "Knowledge Base",
@@ -330,7 +330,7 @@
         "description": "For freelancers who earn from content",
         "features": [
           "20 articles per month",
-          "2 sites (WordPress/Drupal)",
+          "2 sites (WordPress/Drupal/Shopify)",
           "1 Brand Voice",
           "5 languages with geo-targeting",
           "Meta tags, alt texts, internal linking",
@@ -412,7 +412,7 @@
     "subtitle": "3 articles free. No credit card. Results in 20 minutes.",
     "ctaPrimary": "Start free",
     "ctaSecondary": "Watch demo",
-    "trustLine": "WordPress + Drupal · 45 languages with geo-targeting · 30-day money-back guarantee",
+    "trustLine": "WordPress + Drupal + Shopify · 45 languages with geo-targeting · 30-day money-back guarantee",
     "imageAlt": "Draft2Live — AI-to-CMS publishing"
   },
   "footer": {
