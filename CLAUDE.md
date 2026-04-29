@@ -26,6 +26,6 @@ The following skills are available in `.claude/skills/` for legal document work:
 
 ## Workflow preferences
 
-- **Auto-commit and push after every code change.** When working on this repo, do NOT ask the user "should I commit?" or "want me to push?" — just commit with a clear conventional-commit message (`feat:` / `fix:` / `chore:` / `refactor:` / `docs:`) and push to the current working branch. Use small focused commits per logical change. Keep PR description / branch info up to date.
-- **Never push to `main` directly.** Always push to a feature branch and open/update a PR. The user explicitly merges PRs themselves.
+- **Auto-commit and push after every code change.** When working on this repo, do NOT ask "should I commit?" or "want me to push?" — just commit with a clear conventional-commit message (`feat:` / `fix:` / `chore:` / `refactor:` / `docs:`) and push immediately. Use small focused commits per logical change.
+- **Push directly to `main`.** Do not create feature branches or PRs. Commit and push straight to `main`. The repo has auto-deploy via webhook — every push to main goes live automatically.
 - **Token handling**: never persist GitHub tokens in `.git/config`, `~/.gitconfig`, or any file. Tokens are passed inline via `GH_TOKEN` env var or one-shot push URL only.
