@@ -19,9 +19,11 @@
   <rect width="1200" height="630" fill="url(#headlineGlow)"/>
 
   <!-- Logo lockup (top-left). Real brand mark from logo-white.svg.
-       Width 300 keeps the teal "d" rendered as a letter-sized glyph
-       (~30px cap height), bound tight to "raft2live" with no extra gap. -->
-  <svg x="80" y="72" width="300" height="48" viewBox="0 0 259 41">
+       viewBox extended to y=53 to include the full d-icon's bottom curve
+       (was 41, which clipped the d's bottom). Tagline strip paths
+       (y=44-55) are intentionally excluded — only wordmark+d kept here.
+       Height bumped 48→62 to keep proportional with the new viewBox. -->
+  <svg x="80" y="72" width="300" height="62" viewBox="0 0 259 53">
     <path d="M43.2503 37C40.0503 33.7 38.4503 29.8 38.4503 25.5C38.4503 19.7 38.4503 14 38.4503 8.2C38.4503 8.1 38.4503 4.7 38.4503 2.2C34.3503 2.2 30.1503 2.2 26.0503 2.2C26.0503 2.5 26.0503 2.8 26.0503 3.1C26.0503 11.2 26.0503 19.2 26.0503 27.3C26.0503 33.3 27.7503 38.7 31.4503 43.4C35.4503 48.5 40.6503 51.7 47.1503 52.6C48.3503 52.8 49.5503 52.9 50.8503 53C50.8503 49.3 50.8503 45.7 50.8503 42C47.9503 40.9 45.4503 39.2 43.2503 37Z" fill="#16B4B5"/>
     <path d="M4.55031 13.3C-1.44969 22.6 -1.54969 32.3 4.45031 41.7C9.15031 49.1 16.2503 52.7 25.0503 53C25.0503 36 25.0503 19.2 25.0503 2.1C16.3503 2.4 9.25031 6 4.55031 13.3Z" fill="#16B4B5"/>
     <path d="M82.1 15.1L81 14.6C79.4 14 77.7 13.6 75.9 13.6C74.1 13.6 72.4 14 70.8 14.6C69.2 15.3 67.8 16.2 66.6 17.4C65.4 18.6 64.5 20 63.8 21.6C63.1 23.2 62.8 24.9 62.8 26.7C62.8 28.4 63.1 30.2 63.8 31.8C64.4 33.4 65.4 34.7 66.6 36C67.8 37.2 69.2 38.1 70.8 38.8C72.4 39.4 74.1 39.8 75.9 39.8C77.6 39.8 79.3 39.4 81 38.8C82.5 38.1 83.9 37.2 85.1 36C86.3 34.8 87.2 33.4 87.9 31.8C88.6 30.2 88.9 28.5 88.9 26.7V4.5L82.1 2.2V15.1ZM76 32.7C72.6 32.7 69.8 29.9 69.8 26.5C69.8 23.1 72.5 20.3 76 20.3C79.4 20.3 82.2 23.1 82.2 26.5C82.1 30 79.3 32.7 76 32.7Z" fill="#ffffff"/>
