@@ -6,9 +6,9 @@ const path = require('path');
 const sharp = require('sharp');
 
 // Render og-en-v2.svg (the current source of truth, matches landing copy)
-// to og-en.png. og-en.svg is kept as legacy fallback.
+// to og-en-v2.png. og-en.svg is kept as legacy fallback.
 const inPath = path.resolve(__dirname, '..', 'public', 'og-images', 'og-en-v2.svg');
-const outPath = path.resolve(__dirname, '..', 'public', 'og-images', 'og-en.png');
+const outPath = path.resolve(__dirname, '..', 'public', 'og-images', 'og-en-v2.png');
 
 (async () => {
   const svg = fs.readFileSync(inPath);

@@ -28,7 +28,7 @@ export function generateMetadata(): Metadata {
       locale: 'en_US',
       type: 'website',
       images: [{
-        url: '/og-images/og-en.png',
+        url: '/og-images/og-en-v2.png',
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -39,7 +39,7 @@ export function generateMetadata(): Metadata {
       card: 'summary_large_image',
       title: t('twitterTitle'),
       description: t('twitterDescription'),
-      images: ['/og-images/og-en.png'],
+      images: ['/og-images/og-en-v2.png'],
     },
   };
 }
@@ -55,7 +55,7 @@ function getJsonLd() {
     '@type': 'Organization',
     name: 'Draft2Live',
     url: 'https://en.draft2live.com',
-    logo: 'https://en.draft2live.com/og-images/og-en.png',
+    logo: 'https://en.draft2live.com/og-images/og-en-v2.png',
     description: t('orgDescription'),
   };
 
