@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "title": "Draft2Live: from keyword to published article in 20 minutes",
-    "description": "AI platform for SEO content: country-specific SERP analysis, tone of voice control, SEO audit, and one-click publishing to WordPress, Drupal, or Shopify Blog.",
+    "title": "Draft2Live — AI SEO Article Generator that Publishes to Your CMS",
+    "description": "AI generates SEO articles and publishes directly to your WordPress, Drupal, or Shopify Blog. SERP research, tone of voice control, hands-off CMS publishing.",
     "ogTitle": "Draft2Live: AI for SEO content that publishes itself",
-    "ogDescription": "Enter a keyword. Get a published article on your site in 20 minutes. SERP analysis, tone of voice, CMS publishing.",
+    "ogDescription": "Enter a keyword. AI runs SERP research, drafts in your tone, and publishes to your CMS — done before your coffee gets cold.",
     "twitterTitle": "Draft2Live: AI for SEO content",
-    "twitterDescription": "From keyword to published article in 20 minutes. SERP analysis, tone of voice, one-click publishing."
+    "twitterDescription": "From keyword to a live SEO article — done before your coffee. SERP analysis, tone of voice, one-click CMS publishing."
   },
   "jsonLd": {
-    "orgDescription": "AI platform that turns a keyword into an SEO-optimized article published on your website in 20 minutes."
+    "orgDescription": "AI platform that turns a keyword into an SEO-optimized article published on your website — hands-off, end-to-end."
   },
   "nav": {
     "ariaLabel": "Main navigation",
@@ -24,11 +24,11 @@
   },
   "hero": {
     "badge": "5,000+ articles published · 45 languages · WordPress + Drupal + Shopify",
-    "titleLine1": "From keyword",
-    "titleLine2Prefix": "to",
-    "titleLine3": "live on your site in 20 min",
-    "typingWords": ["an SEO article", "a blog post", "a landing page", "a how-to guide", "a product review"],
-    "subtitle": "Enter a phrase. AI analyzes the TOP 10 in your target country and writes an article in a tone you choose. Publish to WordPress, Drupal, or Shopify Blog in one click.",
+    "titleLine1": "From keyword to",
+    "titleLine2Prefix": "a live SEO article —",
+    "titleLine3": "done before your coffee.",
+    "typingWords": [""],
+    "subtitle": "SERP research in your target country, on-brand drafting, SEO audit, and one-click publishing to WordPress, Drupal, or Shopify Blog — hands-off.",
     "searchPlaceholder": "Enter a keyword for your article...",
     "searchAriaLabel": "Keyword for article",
     "searchCta": "Write article →",
@@ -39,7 +39,7 @@
       "laptop reviews 2026",
       "SaaS marketing"
     ],
-    "microcopy": "No credit card · Up to 3 articles free · Setup in 2 minutes",
+    "microcopy": "No prompts to write · No copy-paste · Up to 3 articles free",
     "videoAriaLabel": "Watch Draft2Live demo",
     "videoTitle": "Watch demo",
     "videoSubtitle": "2 min, from keyword to published article",
@@ -205,7 +205,7 @@
       { "label": "articles published" },
       { "label": "active companies" },
       { "label": "languages with geo-targeting" },
-      { "label": "from keyword to publish", "suffix": " min" }
+      { "label": "between AI and your CMS", "suffix": " copy-paste" }
     ]
   },
   "testimonials": {
@@ -235,7 +235,7 @@
         "initials": "AT"
       },
       {
-        "quote": "We translated our blog into 6 languages in a week. A single translation used to cost €40 and take 3 days. Now Draft2Live creates a localized SEO article in 20 minutes.",
+        "quote": "We translated our blog into 6 languages in a week. A single translation used to cost €40 and take 3 days. Now Draft2Live creates a localized SEO article before our coffee gets cold.",
         "author": "Iryna Savchenko",
         "role": "Head of Content, TravelHub",
         "initials": "IS"
@@ -276,7 +276,7 @@
         "persona": "Business owner",
         "headline": "Content without a copywriter",
         "desc": "Enter a keyword, get a published article. No SEO expertise needed. Organic traffic grows while you focus on business.",
-        "metrics": ["No SEO experience needed", "20 min per article", "+40% traffic"]
+        "metrics": ["No SEO experience needed", "Hands-off publishing", "+40% traffic"]
       }
     ]
   },
@@ -385,8 +385,8 @@
       },
       {
         "q": "How long does one article actually take?",
-        "a": "On average 20 minutes: enter a keyword, get a published article on your site. SERP analysis takes 2–3 minutes, generation 10–12 minutes, CMS publishing a few seconds. You can run multiple articles in parallel.",
-        "aPlain": "On average 20 minutes: enter a keyword, get a published article on your site. SERP analysis takes 2–3 minutes, generation 10–12 minutes, CMS publishing a few seconds. You can run multiple articles in parallel."
+        "a": "Most articles publish before your coffee gets cold. SERP analysis takes 2–3 minutes, generation 10–12, and CMS publishing finishes in seconds. You queue the keyword and walk away — there's nothing to babysit.",
+        "aPlain": "Most articles publish before your coffee gets cold. SERP analysis takes 2–3 minutes, generation 10–12, and CMS publishing finishes in seconds. You queue the keyword and walk away — there's nothing to babysit."
       },
       {
         "q": "What is Knowledge Base and why do I need it?",
@@ -408,7 +408,7 @@
   "cta": {
     "titlePart1": "Your competitors are already publishing.",
     "titlePart2": "Are you?",
-    "subtitle": "Up to 3 articles free. No credit card. Results in 20 minutes.",
+    "subtitle": "Up to 3 articles free. No credit card. Live URL before your coffee gets cold.",
     "ctaPrimary": "Start free",
     "ctaSecondary": "Watch demo",
     "trustLine": "WordPress + Drupal + Shopify · 45 languages with geo-targeting · 30-day money-back guarantee",
@@ -416,7 +416,7 @@
   },
   "footer": {
     "brand": {
-      "description": "From keyword to published article in 20 minutes. AI platform for SEO content.",
+      "description": "From keyword to a live SEO article — done before your coffee. AI platform for SEO content.",
       "newsletterPlaceholder": "Email for SEO tips",
       "newsletterAriaLabel": "Email to subscribe to newsletter",
       "subscribe": "Subscribe"
@@ -437,7 +437,7 @@
   "earlyAccess": {
     "closeAriaLabel": "Close",
     "statusLabel": "Launching in a few weeks",
-    "title": "Be among the first to publish articles in 20 minutes",
+    "title": "Be among the first to publish articles before your coffee gets cold",
     "subtitle": "Up to 3 articles free + priority when we launch",
     "bonus": "First 100 sign-ups: Connect plan free for 30 days",
     "planBadge": "Selected plan: {plan}",
