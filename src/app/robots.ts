@@ -13,7 +13,7 @@ export const dynamic = 'force-static';
  * the sitemap. Fixed as part of P0 SEO remediation.
  */
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://draft2live.ai';
+  const baseUrl = 'https://en.draft2live.com';
 
   return {
     rules: [

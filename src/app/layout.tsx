@@ -13,7 +13,7 @@ const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrai
 export function generateMetadata(): Metadata {
   const t = getTranslations('metadata');
   return {
-    metadataBase: new URL('https://draft2live.ai'),
+    metadataBase: new URL('https://en.draft2live.com'),
     icons: { icon: '/favicon.svg' },
     title: t('title'),
     description: t('description'),
@@ -23,14 +23,15 @@ export function generateMetadata(): Metadata {
     openGraph: {
       title: t('ogTitle'),
       description: t('ogDescription'),
-      url: 'https://draft2live.ai/',
+      url: 'https://en.draft2live.com/',
       siteName: 'Draft2Live',
       locale: 'en_US',
       type: 'website',
       images: [{
-        url: '/og-images/og-en.svg',
+        url: '/og-images/og-en.png',
         width: 1200,
         height: 630,
+        type: 'image/png',
         alt: 'Draft2Live — AI-to-CMS publishing',
       }],
     },
@@ -38,7 +39,7 @@ export function generateMetadata(): Metadata {
       card: 'summary_large_image',
       title: t('twitterTitle'),
       description: t('twitterDescription'),
-      images: ['/og-images/og-en.svg'],
+      images: ['/og-images/og-en.png'],
     },
   };
 }
@@ -53,8 +54,8 @@ function getJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Draft2Live',
-    url: 'https://draft2live.ai',
-    logo: 'https://draft2live.ai/logo.svg',
+    url: 'https://en.draft2live.com',
+    logo: 'https://en.draft2live.com/og-images/og-en.png',
     description: t('orgDescription'),
   };
 
