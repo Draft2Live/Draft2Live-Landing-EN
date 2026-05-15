@@ -224,10 +224,10 @@ export default function Navigation() {
             })}
           </div>
 
-          {/* Bottom: full-width CTA with safe-area-inset for gesture bar */}
+          {/* Bottom: full-width CTA with extra clearance for Android gesture bar / iOS home indicator */}
           <div
             className="px-6 pt-4 shrink-0"
-            style={{ paddingBottom: 'max(1.75rem, env(safe-area-inset-bottom, 1.75rem))' }}
+            style={{ paddingBottom: 'calc(2.5rem + env(safe-area-inset-bottom, 0px))' }}
           >
             <motion.a
               href="https://draft2live.ai/en/register"
