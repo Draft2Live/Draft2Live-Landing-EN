@@ -201,8 +201,8 @@ export default function Navigation() {
             </button>
           </div>
 
-          {/* Middle: nav links */}
-          <div className="flex-1 flex flex-col items-center justify-center gap-7 px-6">
+          {/* Middle: nav links — anchored near top with breathing room (no excessive centering) */}
+          <div className="flex-1 flex flex-col items-stretch gap-1 px-6 pt-8 overflow-y-auto">
             {navLinks.map((link, i) => {
               const isActive = activeSection === link.href.replace('#', '');
               return (
@@ -214,7 +214,7 @@ export default function Navigation() {
                   exit={{ opacity: 0, y: -6 }}
                   transition={{ delay: 0.05 + i * 0.06, duration: 0.25 }}
                   onClick={e => handleClick(e, link.href)}
-                  className={`text-2xl font-heading font-bold transition-colors ${
+                  className={`block w-full py-4 text-xl font-heading font-bold transition-colors border-b border-white/[0.06] ${
                     isActive ? 'text-teal-400' : 'text-white'
                   }`}
                 >
@@ -224,8 +224,11 @@ export default function Navigation() {
             })}
           </div>
 
-          {/* Bottom: full-width CTA */}
-          <div className="px-6 pb-10 pt-4 shrink-0">
+          {/* Bottom: full-width CTA with safe-area-inset for gesture bar */}
+          <div
+            className="px-6 pt-4 shrink-0"
+            style={{ paddingBottom: 'max(1.75rem, env(safe-area-inset-bottom, 1.75rem))' }}
+          >
             <motion.a
               href="https://draft2live.ai/en/register"
               rel="noopener"
