@@ -91,6 +91,15 @@ export default function Navigation() {
     return () => window.removeEventListener('keydown', onKey);
   }, [mobileOpen]);
 
+  // Lock body scroll while mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = prev; };
+    }
+  }, [mobileOpen]);
+
   return (
     <>
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-teal-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-bold">
@@ -149,28 +158,73 @@ export default function Navigation() {
             className="block w-full h-0.5 bg-white origin-center transition-colors" />
         </button>
 
-        {/* Mobile overlay */}
+        {/* Mobile overlay — full-screen, fully opaque, z-[60] above header */}
         <AnimatePresence>
           {mobileOpen && (
-            <motion.div id="mobile-menu" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8">
-              {navLinks.map((link, i) => (
-                <motion.a key={link.href} href={link.href}
-                  initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  onClick={e => handleClick(e, link.href)}
-                  className="text-2xl font-heading font-bold text-white">
-                  {link.label}
+            <motion.div
+              id="mobile-menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[60] flex flex-col bg-darker"
+              style={{ backgroundColor: '#031931' }}
+            >
+              {/* Top bar: logo + close */}
+              <div className="flex items-center justify-between px-6 h-20 shrink-0 border-b border-white/[0.06]">
+                <Link href="/" onClick={() => setMobileOpen(false)}>
+                  <Image src="/logo-white.svg" alt="Draft2Live" width={130} height={24} />
+                </Link>
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  aria-label="Close menu"
+                  className="w-11 h-11 flex items-center justify-center text-white -mr-2"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                    <line x1="6" y1="18" x2="18" y2="6" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Middle: nav links */}
+              <div className="flex-1 flex flex-col items-center justify-center gap-7 px-6">
+                {navLinks.map((link, i) => {
+                  const isActive = activeSection === link.href.replace('#', '');
+                  return (
+                    <motion.a
+                      key={link.href}
+                      href={link.href}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ delay: 0.05 + i * 0.06, duration: 0.25 }}
+                      onClick={e => handleClick(e, link.href)}
+                      className={`text-2xl font-heading font-bold transition-colors ${
+                        isActive ? 'text-teal-400' : 'text-white'
+                      }`}
+                    >
+                      {link.label}
+                    </motion.a>
+                  );
+                })}
+              </div>
+
+              {/* Bottom: full-width CTA */}
+              <div className="px-6 pb-10 pt-4 shrink-0">
+                <motion.a
+                  href="https://draft2live.ai/en/register"
+                  rel="noopener"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ delay: 0.3, duration: 0.25 }}
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full px-6 py-4 text-center text-base font-bold rounded-xl bg-teal-600 text-white shadow-lg shadow-teal-500/20 hover:bg-teal-500 transition-colors"
+                >
+                  {t('cta')}
                 </motion.a>
-              ))}
-              <motion.a
-                href="https://draft2live.ai/en/register" rel="noopener"
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 px-8 py-4 text-lg font-bold rounded-xl bg-teal-600 text-white hover:bg-teal-500 transition-colors cursor-pointer">
-                {t('cta')}
-              </motion.a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
