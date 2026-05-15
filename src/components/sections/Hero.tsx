@@ -276,10 +276,11 @@ export default function Hero() {
             style={{ letterSpacing: '-0.03em' }}
           >
             <span className="block">{t('titleLine1')}</span>
-            <span className="block min-h-[1.15em]">
-              {/* Prefix + dynamic word as ONE inline-block unit — prevents
-                  "do" from orphaning on its own line on narrow viewports
-                  (e.g. PL where titleLine1 is already ~19ch wide). */}
+            {/* Reserve enough vertical space for the LONGEST word so the form
+                below doesn't jump up/down as the typewriter cycles. On mobile
+                long words (like "Shopify Blog post") wrap to 2 lines — pre-allocate
+                that height. */}
+            <span className="block min-h-[2.4em] sm:min-h-[1.15em]">
               <span className="inline-block text-left whitespace-nowrap" style={{ minWidth: '14ch' }}>
                 {t('titleLine2Prefix')}{' '}
                 <span className="gradient-text">{text}</span>
