@@ -202,7 +202,7 @@ export default function Navigation() {
           </div>
 
           {/* Middle: nav links — anchored near top with breathing room (no excessive centering) */}
-          <div className="flex-1 flex flex-col items-stretch gap-1 px-6 pt-8 overflow-y-auto">
+          <div className="flex-1 flex flex-col items-stretch gap-1 px-8 pt-8 overflow-y-auto">
             {navLinks.map((link, i) => {
               const isActive = activeSection === link.href.replace('#', '');
               return (
@@ -226,7 +226,7 @@ export default function Navigation() {
 
           {/* Bottom: full-width CTA with extra clearance for Android gesture bar / iOS home indicator */}
           <div
-            className="px-6 pt-4 shrink-0"
+            className="px-8 pt-4 shrink-0"
             style={{ paddingBottom: 'calc(4rem + env(safe-area-inset-bottom, 0px))' }}
           >
             <motion.a
