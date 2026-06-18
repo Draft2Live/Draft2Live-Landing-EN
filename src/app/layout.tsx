@@ -41,6 +41,11 @@ export function generateMetadata(): Metadata {
       description: t('twitterDescription'),
       images: ['/og-images/og-en-v2.png'],
     },
+    verification: {
+      other: {
+        'facebook-domain-verification': 'mmo2uo2mmfwrlatid84r632npr4cm4',
+      },
+    },
   };
 }
 
